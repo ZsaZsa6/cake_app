@@ -1,0 +1,16 @@
+<header>
+  <h1>Make a Customer Account!</h1> 
+</header>
+
+<div>
+<% if @customer.errors.any? %>
+    <ul>
+    <% @customer.errors.full_messages.each do |msg| %>
+      <li id="errors"><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+</div>
+<%= render 'form' %>
+
+

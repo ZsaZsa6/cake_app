@@ -5,5 +5,7 @@ class Customer < ApplicationRecord
     validates :email, uniqueness: true
     validates :password, presence: true
     has_secure_password
+    has_many :tiers
+    has_many :cakes, through: :tiers
     
 end

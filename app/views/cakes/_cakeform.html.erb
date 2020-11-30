@@ -1,10 +1,15 @@
-<%= form_for @cake do |c| %>
+<%= form_for @current_customer do |f| %>
       
-    <br><%= c.label :title %><br>
-    <br><%= c.text_field :title %><br>
-
-    <%= c.label :number_tiers %>
-    <%= c.number_field :number_tiers, in: 1...10 %>
+    <%= f.fields_for :cakes do |cake_attributes| %>
+      
+        <br><%= cake_attributes.label :title %><br>
+        <br><%= cake_attributes.text_field :title %><br>
+    
+        <%= cake_attributes.label :number_tiers %>
+        <%= cake_attributes.number_field :number_tiers, in: 1...10 %>
+        
+    <% end %>
     
     <%= button_to "Create cake", cakes_path, method: :post %> 
     <% end %>
+    <%= render 'shared/links' %>

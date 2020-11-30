@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create", as: "session"
   delete '/sessions', to: "sessions#destroy", as: "logout"
   resources :customers
-
+  resources :customers do
+    resources :cakes, only: [:index, :new]
+  end
+ 
   
 end

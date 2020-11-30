@@ -1,0 +1,10 @@
+<%= form_for @cake do |c| %>
+      
+    <br><%= c.label :title %><br>
+    <br><%= c.text_field :title %><br>
+
+    <%= c.label :number_tiers %>
+    <%= c.number_field :number_tiers, in: 1...10 %>
+    
+    <%= button_to "Create cake", cakes_path, method: :post %> 
+    <% end %>

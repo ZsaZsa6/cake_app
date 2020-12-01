@@ -2,5 +2,8 @@
 <% @cakes.each do | cake | %>
 Cake Title <%= cake.title %><br>
 Number of Tiers <%= cake.number_tiers %>
+<%= link_to "View your cake ", tiers_path(@cake) %><br>
+
+<%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>
 <% end %>
 

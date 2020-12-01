@@ -1,4 +1,4 @@
-<%= form_with(model: [:customer, @cake] local: true) do |f| %>
+<%= form_for @cake do |f| %>
     <%= f.label "Title of cake:" %><br>
     e.g. Bridal cake
    <br><%= f.text_field :title %><br>

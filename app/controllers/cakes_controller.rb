@@ -13,7 +13,7 @@ class CakesController < ApplicationController
     def create
         @cake = Cake.create(cake_params)
         if @cake.save
-         render 'new_tier_path'
+         redirect_to new_cake_tier_path(@current_customer.cakes.last)
         else 
          render 'new'
         end
@@ -45,6 +45,6 @@ class CakesController < ApplicationController
     end
 
     def cake_params
-        params.require(:order).permit(:title, :number_tiers, :customer_id, tiers_attributes: [:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id])
+        params.require(:cake).permit(:title, :number_tiers, :customer_id, tiers_attributes: [:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id])
     end
 end

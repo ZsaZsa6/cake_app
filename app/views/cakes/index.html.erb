@@ -1,19 +1,19 @@
 <h3><%= "#{current_customer.username} Select the cake you would like to view" %></h3>
 <% @cakes.each do | cake | %>
-Cake Title <%= cake.title %><br>
+ Title <%= cake.title %><br>
 Number of Tiers <%= cake.number_tiers %>
+    <% cake.tiers.each do | tier | %>
 
-<% @tiers.each do |tier| %>
-    <h4>
-      <%= tier.flavor %><br>
-      <%= tier.filling %><br>
-      <%= tier.frosting %><br>
-      <%= tier.size %> inches<br>
-      </h4>
+      Tier Flavor: <%= tier.flavor %><br>
+      Tier Filling: <%= tier.filling %><br>
+      Tier Frosting:<%= tier.frosting %><br>
+      Tier Size: <%= tier.size %> inches<br>
+      Tier Shape: <%= tier.shape %><br>
+      Instructions for tier: <%= tier.instructions %><br>
+     <% end %>
+     <%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>
+     <br><%= link_to "Edit this cake", edit_cake_path(cake) %></br>
 <% end %>
 
-<%= link_to "View your cake ", cake_tiers_path(cake) %><br>
 
-<%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>
-<% end %>
 

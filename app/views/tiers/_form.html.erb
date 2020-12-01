@@ -1,0 +1,13 @@
+
+   
+  
+
+    <% @tiers.each do |tier| %>
+        <h4>
+          <%= tier.flavor %><br>
+          <%= tier.filling %><br>
+          <%= tier.frosting %><br>
+          <%= tier.size %> inches<br>
+          </h4>
+   <% end %>
+     <%= render 'shared/links' %>

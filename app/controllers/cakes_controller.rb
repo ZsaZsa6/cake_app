@@ -13,7 +13,7 @@ class CakesController < ApplicationController
     def create
         @cake = Cake.create(cake_params)
         if @cake.save
-         redirect_to new_cake_tier_path(@current_customer.cakes.last)
+         redirect_to new_cake_tier_path(@cake)
         else 
          render 'new'
         end

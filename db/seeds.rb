@@ -11,7 +11,7 @@ Tier.destroy_all
 ronda = Customer.create(username: "ronda", password: 'pw', email: 'rdc@gmail.com')
 
 cake1 = Cake.create(number_tiers: 1, title: "Birthday cake")
-tier1 = Tier.create(flavor: "chocolate", frosting: "vanilla", filling: "vanilla", size: 9, shape: "round", instructions: "Happy Birthday Joan", cake_id: cake1.id, customer_id: ronda.id)
+tier1 = Tier.create(flavor: "chocolate", frosting: "vanilla", filling: "vanilla", size: 10, shape: "round", instructions: "Happy Birthday Joan", cake_id: cake1.id, customer_id: ronda.id)
 
 cake2 = Cake.create(number_tiers: 2, title: "Anniversary Cake")
 tier2 = Tier.create(flavor: "vanilla", frosting: "vanilla", filling: "strawberry", size: 12, shape: "square", instructions: "White frosting with a gold 50 on it", cake_id: cake2.id, customer_id: ronda.id)

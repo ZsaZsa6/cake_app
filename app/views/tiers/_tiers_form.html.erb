@@ -16,9 +16,9 @@
         <%= tier_attributes.label "Shape of tier" %>
         <%= tier_attributes.select(:shape, ['Square', 'Round', 'Oval']) %>
         <%= tier_attributes.label "Instructions" %>
-        <%= tier_attributes.text_area %>
+        <%= tier_attributes.text_area :instructions %>
         <% end %>
-        <%= button_to "Create Tiers", tiers_path, method: :post %>
+        <%= button_to "Create Tiers", cake_tiers_path, method: :post %>
         <% end %>
         <br>
         <br>

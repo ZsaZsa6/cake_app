@@ -1,4 +1,4 @@
-<%= form_with model: @cake do |f| %>
+<%= form_with url: cakes_path do |f| %>
    
 
     <%= f.fields_for :tiers do |tier_attributes|%>

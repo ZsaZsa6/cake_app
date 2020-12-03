@@ -11,7 +11,5 @@ Rails.application.routes.draw do
   resources :cakes do
     resources :tiers
   end
- 
- 
-  
+   
 end

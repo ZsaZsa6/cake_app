@@ -1,4 +1,4 @@
-<%= form_with url: cakes_path do |f| %>
+<%= form_with model: @cake do |f| %>
    
 
     <%= f.fields_for :tiers do |tier_attributes|%>
@@ -18,7 +18,7 @@
         <%= tier_attributes.label "Instructions" %>
         <%= tier_attributes.text_area :instructions %>
         <% end %>
-        <%= button_to "Create Tiers", cake_tiers_path, method: :post %>
+        <%= f.submit "Save Tiers" %>
         <% end %>
         <br>
         <br>

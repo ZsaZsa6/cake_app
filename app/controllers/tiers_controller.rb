@@ -7,17 +7,13 @@ class TiersController < ApplicationController
         @tiers = @cake.tiers
     end
     def new     
-        # binding.pry
-        
-            @tier = Tier.new(cake_id: @cake.id)
-        
-
-         @cake.number_tiers.times {@cake.tiers.build}    
+        @tier = Tier.new(cake_id: @cake.id)
+        @cake.number_tiers.times {@cake.tiers.build}    
     end
     def create
         @tier = Tier.create(tier_params)
         if @tier.save
-        redirect_to cake_tier_path
+        redirect_to cake_path(@tier)
         else
             render 'new'
        end

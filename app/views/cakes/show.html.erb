@@ -1,8 +1,8 @@
 SHOW CAKES
 
-Cake Title: <%= cake.title %>
-Number of Tiers: <%= cake.number_tiers %>
-<% cake.tiers.each do | tier | %>
+Cake Title: <%= @cake.title %>
+Number of Tiers: <%= @cake.number_tiers %>
+<% @cake.tiers.each do | tier | %>
     Tier Flavor: <%= tier.flavor %><br>
       Tier Filling: <%= tier.filling %><br>
       Tier Frosting:<%= tier.frosting %><br>

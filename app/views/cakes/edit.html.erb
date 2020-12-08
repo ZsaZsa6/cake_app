@@ -1,2 +1,31 @@
-<%= render 'cakeform' %>
-<%= render 'tiers/tiers_form' %>
+<%= form_for @cake do |f| %>
+    <%= f.label "Title of cake:" %><br>
+    e.g. Bridal cake
+   <br><%= f.text_field :title %><br>
+    <br><%= f.label "Number of tiers on cake:" %><br>
+    <br><%= f.number_field :number_tiers, in: 1...10 %><br>
+    <%= f.hidden_field (:customer_id) %>  
+
+    
+
+<%= f.fields_for :tiers do |tier_attributes|%>
+    <br>
+    <br>
+
+    <%= tier_attributes.label "Tier Flavor" %>
+    <%= tier_attributes.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
+    <%= tier_attributes.label "Frosting" %> 
+    <%= tier_attributes.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
+    <%= tier_attributes.label "Filling" %>
+    <%= tier_attributes.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
+    <%= tier_attributes.label "Tier size in inches"%>
+    <%= tier_attributes.number_field :size, in: 4...21, step: 2 %><br>
+    <%= tier_attributes.label "Shape of tier" %>
+    <%= tier_attributes.select(:shape, ['Square', 'Round', 'Oval']) %>
+    <%= tier_attributes.label "Instructions" %>
+    <%= tier_attributes.text_area :instructions %>
+    <% end %>
+        
+    <%= f.submit %> 
+    <% end %>
+    <%= render 'shared/links' %>

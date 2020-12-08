@@ -1,2 +1,10 @@
-<h1>Index of tiers</h1>
-<%= render 'form' %>
+Cake Title: <%= @cake.title %>
+Number of Tiers: <%= @cake.number_tiers %>
+<% @cake.tiers.each do | tier | %>
+    Tier Flavor: <%= tier.flavor %><br>
+      Tier Filling: <%= tier.filling %><br>
+      Tier Frosting:<%= tier.frosting %><br>
+      Tier Size: <%= tier.size %> inches<br>
+      Tier Shape: <%= tier.shape %><br>
+      Instructions for tier: <%= tier.instructions %><br>
+     <% end %>

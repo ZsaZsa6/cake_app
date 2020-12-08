@@ -3,7 +3,7 @@ class TiersController < ApplicationController
     
     
     def index
-        @cake = Cake.find_by(params[:cake_id])
+        @cake = Cake.find(params[:cake_id])
         @tiers = @cake.tiers
     end
     def new     

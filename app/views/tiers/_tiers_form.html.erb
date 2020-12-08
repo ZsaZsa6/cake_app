@@ -1,4 +1,6 @@
 <%= form_with model: @cake do |f| %>
+    Cake Title: <%= @cake.title %><br>
+Number of Tiers: <%= @cake.number_tiers %>
    
 
     <%= f.fields_for :tiers do |tier_attributes|%>
@@ -18,9 +20,8 @@
         <%= tier_attributes.label "Instructions" %>
         <%= tier_attributes.text_area :instructions %>
         <% end %>
-        <%=  "Create Tiers", cake_tiers_path, :action => "create" %>
+        <%= link_to "Create Tiers", cake_tiers_path, { action: "create" } %>
         <% end %>
-        <br>
-        <br>
+        
     
-     <%= render 'shared/links' %>
+     

@@ -24,14 +24,18 @@ class CakesController < ApplicationController
      end
      
      def edit
-         @cake = Cake.find_by(params[:id])        
+        cake_id = Cake.find_by(params[:id])       
          
      end
  
      def update
-         cake = Cake.find(params[:id])
-         if cake.update(cake_params)
-         render 'cakes_path(cake)'
+        binding.pry
+        
+        @cake = Cake.find_by(params[:id])
+         if @cake.update(cake_params)
+         render cake_path(@cake)
+         else
+            redirect_to edit_cake_path(@cake)
          end
      end
  

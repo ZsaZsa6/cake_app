@@ -13,14 +13,12 @@ class TiersController < ApplicationController
     def create
         @tier = Tier.create(tier_params)
         if @tier.save
-        redirect_to cake_path(@tier)
+        redirect_to 'cakes/show'
         else
             render 'new'
        end
      end
-    def show
-        @tier = Tier.find_by(params[:id]) 
-     end
+   
      def edit
          @tier = Tier.find_by(params[:id])
      end
@@ -29,6 +27,10 @@ class TiersController < ApplicationController
          tier.update(tier_params)
          render tiers_path(tier)
      end
+     def destroy
+        @tier.destroy
+        redirect_to customer_cakes_path(customer_id: [current_customer.id])
+    end
 
 
     private
@@ -41,6 +43,6 @@ class TiersController < ApplicationController
         params.require(:tier).permit(:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id, :customer_id)
     end
     # def set_customer
-    #     @customer = Customer.find(params[:id])
+    #     @customer = Customer.find(params[:customer_id: [current_customer.id]])
     # end
 end

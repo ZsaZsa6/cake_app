@@ -8,3 +8,5 @@ Number of Tiers: <%= @cake.number_tiers %>
       Tier Shape: <%= tier.shape %><br>
       Instructions for tier: <%= tier.instructions %><br>
      <% end %>
+     <%= link_to "Edit this cake", edit_cake_tier_path(@cake[:id], @tier)%><br>
+     <%= link_to "Delete this cake" %><br>

@@ -1,9 +1,9 @@
-<%= form_with model: @cake do |f| %>
+<%= form_for(@cake, url: cake_tiers_path(@cake), html:{ method: "post", class: "create" }) do |f| %>
     Cake Title: <%= @cake.title %><br>
-Number of Tiers: <%= @cake.number_tiers %>
+    Number of Tiers: <%= @cake.number_tiers %>
    
 
-    <%= f.fields_for :tiers do |tier_attributes|%>
+    <%= f.fields_for :tiers do |tier_attributes| %>
         <br>
         <br>
     
@@ -20,8 +20,10 @@ Number of Tiers: <%= @cake.number_tiers %>
         <%= tier_attributes.label "Instructions" %>
         <%= tier_attributes.text_area :instructions %>
         <% end %>
-        <%= link_to "Create Tiers", cake_tiers_path, { action: "create" } %>
+        <%#= button_to "Create Tiers", cake_tiers_path, { action: "create" } %>
+        <%= f.submit "Create" %>
         <% end %>
+
         
     
      

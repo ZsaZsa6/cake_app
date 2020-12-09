@@ -29,13 +29,13 @@ class CakesController < ApplicationController
      end
  
      def update
-        binding.pry
+        # binding.pry
         
-        @cake = Cake.find_by(params[:id])
-         if @cake.update(cake_params)
-         render cake_path(@cake)
-         else
-            redirect_to edit_cake_path(@cake)
+        cake = Cake.find_by(id: params[:id])
+         if cake.update(cake_params)
+         redirect_to cake_path(cake)
+        #  else
+        #     redirect_to edit_cake_path(@cake)
          end
      end
  

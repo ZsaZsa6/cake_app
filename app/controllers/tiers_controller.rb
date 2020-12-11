@@ -1,5 +1,6 @@
 class TiersController < ApplicationController
     before_action :set_cake, only: [:index, :new, :create]
+    before_action :set_customer
     
     
     def index
@@ -7,10 +8,13 @@ class TiersController < ApplicationController
         @tiers = @cake.tiers
     end
     def new     
-        @tier = Tier.new(cake_id: @cake.id)
+        @tier = Tier.new(cake_id: @cake.id, )        
         @cake.number_tiers.times {@cake.tiers.build}    
     end
     def create
+        binding.pry
+        @cake = Cake.find_by(id: params[:cake_id])
+        
         @tier = Tier.create(tier_params)
         if @tier.save
         redirect_to 'cakes/show'
@@ -39,10 +43,8 @@ class TiersController < ApplicationController
     def set_cake
         @cake = Cake.find(params[:cake_id])
     end
-    def tier_params
-        params.require(:tier).permit(:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id, :customer_id)
+    
+    def set_customer
+        @customer = Customer.find(current_customer.id)
     end
-    # def set_customer
-    #     @customer = Customer.find(params[:customer_id: [current_customer.id]])
-    # end
 end

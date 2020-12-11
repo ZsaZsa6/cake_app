@@ -1,4 +1,4 @@
-<%= form_for(@cake, url: cake_tiers_path(@cake), html:{ method: "post", class: "create" }) do |f| %>
+<%= form_for(@cake, url: cake_tiers_path(@cake, @tier), html:{ method: "post", class: "create" }) do |f| %>
     Cake Title: <%= @cake.title %><br>
     Number of Tiers: <%= @cake.number_tiers %>
    
@@ -19,8 +19,9 @@
         <%= tier_attributes.select(:shape, ['Square', 'Round', 'Oval']) %>
         <%= tier_attributes.label "Instructions" %>
         <%= tier_attributes.text_area :instructions %>
+        <%= f.hidden_field :customer_id, value:current_customer.id %>  
         <% end %>
-        <%#= button_to "Create Tiers", cake_tiers_path, { action: "create" } %>
+        <%#= button_to "Create Tiers", cake_tiers_path(@tier), { action: "create" } %>
         <%= f.submit "Create" %>
         <% end %>
 

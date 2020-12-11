@@ -7,7 +7,7 @@ class CakesController < ApplicationController
     cake_id = Cake.find_by(params[:id])
     end
     def new
-        @cake = Cake.new(customer_id: [current_customer.id])
+        @cake = Cake.new
     end
     
     def create

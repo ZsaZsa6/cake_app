@@ -1,5 +1,5 @@
   
-    <%= form_with do | f | %>
+    <%= form_with(url: '/tiers_path') do | f | %>
            
         <%= f.label "Tier Flavor" %>
         <%= f.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
@@ -15,7 +15,7 @@
         <%= f.text_area :instructions %>
         
         
-        <%= f.submit "Create" %>
+        <%= f.submit data:{ disable_with: false } %>
         <% end %>
         <%= render 'shared/links' %>
         <%= render 'shared/web_links' %>

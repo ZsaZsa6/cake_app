@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
     before_action :set_customer, only: [:show, :edit, :update]
 
-   
+    
 
     def new
         @customer = Customer.new        
@@ -14,7 +14,7 @@ class CustomersController < ApplicationController
           session[:customer_id] = @customer.id
           redirect_to customer_path(@customer)
         else 
-          if Customer.find_by(username: params[:customer][:username]) || Customer.find(email: params[:customer][:email])
+          if Customer.find_by(customername: params[:customer][:customername]) || Customer.find(email: params[:customer][:email])
             flash[:alert] = "Looks like you've already signed up!"
             redirect_to login_path
           else 
@@ -31,9 +31,9 @@ class CustomersController < ApplicationController
 
       def update
         authenticate 
-        @user.update(user_params)
-          if @user.save
-            redirect_to user_path(@user)
+        @customer.update(customer_params)
+          if @customer.save
+            redirect_to customer_path(@customer)
           else 
             flash[:notice] = "Your account was not updated"     
             render :edit
@@ -43,7 +43,7 @@ class CustomersController < ApplicationController
     
     private
     def customer_params
-        params.require(:customer).permit(:username, :email, :password)
+        params.require(:customer).permit(:customername, :email, :password)
       end  
     
     def set_customer

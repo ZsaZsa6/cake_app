@@ -8,16 +8,16 @@ class TiersController < ApplicationController
         @tiers = @cake.tiers
     end
     def new     
-        @tier = Tier.new(cake_id: @cake.id, )        
-        @cake.number_tiers.times {@cake.tiers.build}    
+        @tier = Tier.new    
+          
     end
     def create
-        binding.pry
-        @cake = Cake.find_by(id: params[:cake_id])
         
-        @tier = Tier.create(tier_params)
-        if @tier.save
-        redirect_to 'cakes/show'
+              
+        @tier = current_customer.tiers.build(tier_params)
+        if @tier.save 
+            binding.pry
+        redirect_to 'show'
         else
             render 'new'
        end
@@ -39,7 +39,10 @@ class TiersController < ApplicationController
 
     private
 
-    
+    def tier_params
+       
+        params.require(:tier).permit(:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id)
+    end
     def set_cake
         @cake = Cake.find(params[:cake_id])
     end

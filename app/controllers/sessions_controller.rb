@@ -11,11 +11,12 @@ class SessionsController < ApplicationController
           redirect_to customer_path(customer) 
         end 
       else  
-        flash[:alert] =  "Please try again or Sign Up."
+        flash[:alert] = "Please try again or Sign Up."
         redirect_to login_path
       end
     end
     def omniauth
+      
       @customer = Customer.from_omniauth(auth)
       @customer.save
       session[:customer_id] = @customer.id

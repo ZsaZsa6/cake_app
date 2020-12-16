@@ -4,8 +4,10 @@
    <br><%= f.collection_select(:style, Cake.all, :id, :style) %><br>
 
     
-
         
     <%= f.submit %> 
+    
     <% end %>
+    <%= link_to "View my cakes", customer_cakes_path(current_customer) %><br>
     <%= render 'shared/links' %>
+    

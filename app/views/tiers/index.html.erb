@@ -1,4 +1,4 @@
-Cake Style: <%= cake.style %>
+Cake Style: <%= @cake.style %>
 <% @cake.tiers.each do | tier | %>
     Tier Flavor: <%= tier.flavor %><br>
       Tier Filling: <%= tier.filling %><br>
@@ -7,5 +7,6 @@ Cake Style: <%= cake.style %>
       Tier Shape: <%= tier.shape %><br>
       Instructions for tier: <%= tier.instructions %><br>
      <% end %>
-     <%= link_to "Edit this cake", edit_cake_tier_path(@cake[:id], @tier)%><br>
+     <%= link_to "Edit this cake" %>
      <%= link_to "Delete this cake" %><br>
+     

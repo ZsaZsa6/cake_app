@@ -1,5 +1,5 @@
-
-    <%= form_for @tier do | f | %>
+  
+    <%= form_with do | f | %>
            
         <%= f.label "Tier Flavor" %>
         <%= f.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
@@ -17,6 +17,8 @@
         
         <%= f.submit "Create" %>
         <% end %>
+        <%= render 'shared/links' %>
+        <%= render 'shared/web_links' %>
 
         
     

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   end
   resources :cakes, only: [:create, :edit, :show, :destroy]
   resources :cakes do
-    resources :tiers
+    resources :tiers, only: [:new, :index]
+
   end
+  resources :tiers, only: [:create, :show, :edit, :update, :destroy]
    
 end

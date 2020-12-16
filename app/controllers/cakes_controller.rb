@@ -5,16 +5,20 @@ class CakesController < ApplicationController
     def index
     @cakes = current_customer.cakes
     cake_id = Cake.find_by(params[:id])
+    
+    tier_id = Tier.find_by(params[:id])
     end
+
     def new
         @cake = Cake.new
+
     end
-    
+
     def create
         @cake = Cake.create(cake_params)
         if @cake.save
          
-         redirect_to 'tiers/index'
+         redirect_to new_cake_tier_path(@cake)
         else 
          render 'new'
         end

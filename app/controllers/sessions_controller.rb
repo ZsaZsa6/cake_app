@@ -15,10 +15,19 @@ class SessionsController < ApplicationController
         redirect_to login_path
       end
     end
+    def omniauth
+      @customer = Customer.from_omniauth(auth)
+      @customer.save
+      session[:customer_id] = @customer.id
+      redirect_to home_path
+    end
 
     def destroy
         session[:customer_id] = nil 
         redirect_to login_path 
     end 
-    
+  private
+    def auth
+      request.env['omniauth.auth']
+    end
 end

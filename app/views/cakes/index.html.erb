@@ -1,7 +1,7 @@
 <h3><%= "#{current_customer.username} Select the cake you would like to view" %></h3>
 <% @cakes.each do | cake | %>
- Title <%= cake.title %><br>
-Number of Tiers <%= cake.number_tiers %>
+ Cake Style <%= cake.style %><br>
+
     <% cake.tiers.each do | tier | %>
 
       Tier Flavor: <%= tier.flavor %><br>

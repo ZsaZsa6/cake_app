@@ -14,7 +14,7 @@ class CakesController < ApplicationController
         @cake = Cake.create(cake_params)
         if @cake.save
          
-         redirect_to new_cake_tier_path(@cake)
+         redirect_to 'tiers/index'
         else 
          render 'new'
         end

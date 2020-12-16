@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       @customer = Customer.from_omniauth(auth)
       @customer.save
       session[:customer_id] = @customer.id
-      redirect_to home_path
+      redirect_to root_path
     end
 
     def destroy

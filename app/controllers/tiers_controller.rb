@@ -4,7 +4,7 @@ class TiersController < ApplicationController
     
     
     def index
-        @cake = Cake.find(params[:cake_id])
+        @cake = Cake.find(params[:cake_id]).recent_create
         @tiers = current_customer.tiers
     end
 

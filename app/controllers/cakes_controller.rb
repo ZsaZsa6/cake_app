@@ -3,7 +3,7 @@ class CakesController < ApplicationController
 
 
     def index
-    @cakes = current_customer.cakes
+    @cakes = current_customer.cakes.recent_create
     cake_id = Cake.find_by(params[:id])
     
     tier_id = Tier.find_by(params[:id])

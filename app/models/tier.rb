@@ -4,6 +4,6 @@ class Tier < ApplicationRecord
     # def tiers_attributes(params)
      
     # end
-    scope :recent_create, { order_by('created_at DESC')}
-    scope :recent_use, { order_by('updated_at DESC')}
+    # scope :recent_create, { order('created_at DESC') }
+    # scope :recent_use, { order('updated_at DESC') }
 end

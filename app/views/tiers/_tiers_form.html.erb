@@ -1,5 +1,5 @@
   
-    <%= form_with(url: '/tiers_path') do | f | %>
+    <%= form_with(model: @tier, url: tiers_path) do | f | %>
            
         <%= f.label "Tier Flavor" %>
         <%= f.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
@@ -13,6 +13,7 @@
         <%= f.select(:shape, ['Square', 'Round', 'Oval']) %>
         <%= f.label "Instructions" %>
         <%= f.text_area :instructions %>
+        <%= f.hidden_field :cake_id %>
         
         
         <%= f.submit data:{ disable_with: false } %>

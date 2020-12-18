@@ -12,7 +12,8 @@
       Instructions for tier: <%= tier.instructions %><br>
      <% end %>
      <%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>
-     <br><%= link_to "Edit this cake" %>
+     <br><%= link_to "Edit this cake", edit_cake_path(cake_id, tier_id) %>
+     <%= link_to "Delete this cake", cake_path(cake_id) %>
      <% end %>
 
 

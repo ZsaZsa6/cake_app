@@ -23,21 +23,25 @@ class CakesController < ApplicationController
         end
       end
      def show
-         @cake = Cake.find_by(id: params[:id])
+        @cake = Cake.find(params[:id])
+        @tier = Tier.find(params[:id])
+        
+        binding.pry
      end
      
      def edit
-        @cake = Cake.find_by(id: params[:cake_id])
+        @cake = Cake.find_by(id: params[:id])
         @tier = Tier.find_by(id: params[:id])
-
-         
+      binding.pry
+            
      end
  
      def update
              
         @cake = Cake.find_by(id: params[:id])
         @tier = Tier.find_by(id: params[:id])
-         if cake.update(cake_params)
+        
+         if @cake.update(cake_params) 
          redirect_to cake_path(@cake)
          else
          render edit_cake_path(@cake)

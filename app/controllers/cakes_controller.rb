@@ -1,5 +1,5 @@
 class CakesController < ApplicationController
-    before_action :set_cake, only: [:show, :edit, :update, :destroy]
+    before_action :set_cake, only: [:show, :edit, :update]
 
 
     def index
@@ -42,8 +42,8 @@ class CakesController < ApplicationController
      end
  
      def destroy
-         @cake.destroy
-         redirect_to cakes_path
+        Cake.find(params[:id]).destroy
+         redirect_to customer_cakes_path(customer_id: [current_customer.id])
      end
 
      private

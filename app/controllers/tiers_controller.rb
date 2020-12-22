@@ -43,7 +43,7 @@ class TiersController < ApplicationController
      end
     def destroy
         @tier.destroy
-        redirect_to customer_cakes_path(customer_id: [current_customer.id])
+        redirect_to customer_cakes_path(customer_id: [current_customer.id])o 
     end
 
 

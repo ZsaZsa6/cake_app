@@ -1,5 +1,5 @@
 class Cake < ApplicationRecord
-    has_many :tiers, dependent_destroy:
+    has_many :tiers, dependent: :destroy
     has_many :customers, through: :tiers
     accepts_nested_attributes_for :tiers
 

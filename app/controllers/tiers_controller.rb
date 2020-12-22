@@ -4,7 +4,7 @@ class TiersController < ApplicationController
     
     
     def index
-       binding.pry
+       
         @cake = Cake.find_by(id: params[:cake_id])
         @tier = Tier.find_by(id: params[:id])
         # @tier = Tier.find(params[:id])
@@ -17,6 +17,7 @@ class TiersController < ApplicationController
         @cake = Cake.find(params[:cake_id]) 
         @tier = Tier.new
         @tier.cake = @cake
+         binding.pry
     end
 
     def create
@@ -43,7 +44,7 @@ class TiersController < ApplicationController
      end
     def destroy
         @tier.destroy
-        redirect_to customer_cakes_path(customer_id: [current_customer.id])o 
+        redirect_to customer_cakes_path(customer_id: [current_customer.id])
     end
 
 

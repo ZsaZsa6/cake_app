@@ -8,5 +8,6 @@ Cake Style: <%= @cake.style %>
       Instructions for tier: <%= tier.instructions %><br>
      <% end %>
      <%= link_to "Edit this cake" %>
-     <%= link_to "Destroy", @tier, method: :delete, data: { confirm: "Are you sure?" } %><br>
-     
+     <%= render 'shared/links' %>
+        <%= render 'shared/web_links' %>
+    

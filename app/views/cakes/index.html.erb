@@ -1,3 +1,8 @@
+<%= render 'shared/links' %>
+<%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>
+
+
+
 <h3><%= "#{current_customer.username} Select the cake you would like to view" %></h3>
 <% @cakes.each do | cake | %>
  <h3> Cake Style: <%= cake.style %></h3><br>
@@ -11,10 +16,14 @@
       Tier Shape: <%= tier.shape %><br>
       Instructions for tier: <%= tier.instructions %><br>
      <% end %>
-     <%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>
-     <br><%= button_to "Edit this cake", edit_cake_path(cake)%>
+    
+     <br><%= button_to "Edit this cake", edit_cake_path(cake) %>
      <%= button_to "Delete This Cake", cake_path(cake), method: :delete %>
      <% end %>
+     <%= render 'shared/links' %>
+      <%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>
+     
+     
 
 
 

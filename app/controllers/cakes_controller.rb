@@ -16,7 +16,7 @@ class CakesController < ApplicationController
     def create
         @cake = Cake.create(cake_params)
         if @cake.save
-         
+               
          redirect_to new_cake_tier_path(@cake)
         else 
          render 'new'
@@ -36,8 +36,8 @@ class CakesController < ApplicationController
         cake = Cake.find_by(id: params[:id])
          if cake.update(cake_params)
          redirect_to cake_path(cake)
-        #  else
-        #     redirect_to edit_cake_path(@cake)
+         else
+         render edit_cake_path(@cake)
          end
      end
  
@@ -52,6 +52,6 @@ class CakesController < ApplicationController
     end
 
     def cake_params
-        params.require(:cake).permit(:title, :number_tiers, :customer_id, tiers_attributes: [:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id])
+        params.require(:cake).permit(:style, tiers_attributes: [:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id, :customer_id])
     end
 end

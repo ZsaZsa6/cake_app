@@ -17,7 +17,7 @@ class TiersController < ApplicationController
         @cake = Cake.find(params[:cake_id]) 
         @tier = Tier.new
         @tier.cake = @cake
-         binding.pry
+        #  binding.pry
     end
 
     def create

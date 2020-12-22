@@ -27,7 +27,9 @@ class CakesController < ApplicationController
      end
      
      def edit
-        cake_id = Cake.find_by(params[:id])       
+        cake_id = Cake.find_by(params[:id])
+        tier_id = Tier.find_by(params[:id])
+
          
      end
  

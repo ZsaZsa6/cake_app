@@ -7,7 +7,7 @@ Cake Style: <%= @cake.style %>
       Tier Shape: <%= tier.shape %><br>
       Instructions for tier: <%= tier.instructions %><br>
      <% end %>
-     <%= link_to "Edit this cake" %>
+     <%= link_to "Edit this cake", edit_cake_path(cake) %>
      <%= render 'shared/links' %>
-        <%= render 'shared/web_links' %>
+     <%= render 'shared/web_links' %>
     

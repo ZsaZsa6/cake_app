@@ -1,27 +1,30 @@
- <%= form_for @cake do |f| %>
-    <%= f.label "Style of Cake:" %><br>
-   
-   <br><%= f.collection_select(:style, Cake.all, :id, :style) %><br>
 
-   <% end %>
- <%= form_with(model: @tier, url: tier_path) do | f | %>
+
+ <%= form_with(model: @cake, method: "patch") do |cake | %>
+    <%= cake.label "Style of Cake:" %><br>
+   
+   <br><%= cake.collection_select(:style, Cake.all, :style, :style) %><br>
+
+   
+ <%= fields_for :tier, @cake.tiers do | tier_attributes | %>
            
-        <%= f.label "Tier Flavor" %>
-        <%= f.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
-        <%= f.label "Frosting" %> 
-        <%= f.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
-        <%= f.label "Filling" %>
-        <%= f.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
-        <%= f.label "Tier size in inches"%>
-        <%= f.number_field :size, in: 4...21, step: 2 %><br>
-        <%= f.label "Shape of tier" %>
-        <%= f.select(:shape, ['Square', 'Round', 'Oval']) %>
-        <%= f.label "Instructions" %>
-        <%= f.text_area :instructions %>
-        <%= f.hidden_field :cake_id %>
+        <%= tier_attributes.label "Tier Flavor" %>
+        <%= tier_attributes.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
+        <%= tier_attributes.label "Frosting" %> 
+        <%= tier_attributes.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
+        <%= tier_attributes.label "Filling" %>
+        <%= tier_attributes.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
+        <%= tier_attributes.label "Tier size in inches"%>
+        <%= tier_attributes.number_field :size, in: 4...21, step: 2 %><br>
+        <%= tier_attributes.label "Shape of tier" %>
+        <%= tier_attributes.select(:shape, ['Square', 'Round', 'Oval']) %>
+        <%= tier_attributes.label "Instructions" %>
+        <%= tier_attributes.text_area :instructions %>
+        <%= tier_attributes.hidden_field :cake_id %>
         
         
         <%= f.submit data:{ disable_with: false } %>
+        <% end %>
         <% end %>
         <%= render 'shared/links' %>
         <%= render 'shared/web_links' %>

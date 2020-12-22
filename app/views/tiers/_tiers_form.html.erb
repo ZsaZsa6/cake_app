@@ -11,7 +11,7 @@
         <%= f.label "Tier size in inches"%>
         <%= f.number_field :size, in: 4...21, step: 2 %><br>
         <%= f.label "Shape of tier" %>
-        <%= f.select(:shape, ['Square', 'Round', 'Oval']) %>
+        <%= f.select(:shape, ['Square', 'Round', 'Oval', 'Ball']) %>
         <%= f.label "Instructions" %>
         <%= f.text_area :instructions %>
         <%= f.hidden_field :cake_id %>       

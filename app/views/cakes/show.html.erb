@@ -1,6 +1,6 @@
-SHOW CAKES
-
-Cake Title: <%= @cake.style %>
+Here is your cake:
+<br>
+Cake Style: <%= @cake.style %><br>
 <% @cake.tiers.each do | tier | %>
     Tier Flavor: <%= tier.flavor %><br>
       Tier Filling: <%= tier.filling %><br>
@@ -8,4 +8,8 @@ Cake Title: <%= @cake.style %>
       Tier Size: <%= tier.size %> inches<br>
       Tier Shape: <%= tier.shape %><br>
       Instructions for tier: <%= tier.instructions %><br>
+
+     <%= link_to "Edit this cake", edit_cake_path(@cake) %>
      <% end %>
+     <%= render 'shared/links' %>
+     <%= render 'shared/web_links' %>

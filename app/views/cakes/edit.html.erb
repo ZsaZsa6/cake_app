@@ -6,24 +6,24 @@
    <br><%= cake.collection_select(:style, Cake.all, :style, :style) %><br>
 
    
- <%= fields_for :tier, @cake.tiers do | tier_attributes | %>
+ <%= fields_for @tier do | t | %>
            
-        <%= tier_attributes.label "Tier Flavor" %>
-        <%= tier_attributes.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
-        <%= tier_attributes.label "Frosting" %> 
-        <%= tier_attributes.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
-        <%= tier_attributes.label "Filling" %>
-        <%= tier_attributes.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
-        <%= tier_attributes.label "Tier size in inches"%>
-        <%= tier_attributes.number_field :size, in: 4...21, step: 2 %><br>
-        <%= tier_attributes.label "Shape of tier" %>
-        <%= tier_attributes.select(:shape, ['Square', 'Round', 'Oval']) %>
-        <%= tier_attributes.label "Instructions" %>
-        <%= tier_attributes.text_area :instructions %>
-        <%= tier_attributes.hidden_field :cake_id %>
+        <%= t.label "Tier Flavor:" %>
+        <%= t.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
+        <%= t.label "Frosting:" %> 
+        <%= t.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
+        <%= t.label "Filling:" %>
+        <%= t.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
+        <%= t.label "Tier size in inches:"%>
+        <%= t.number_field :size, in: 4...21, step: 2 %><br>
+        <%= t.label "Shape of tier:" %>
+        <%= t.select(:shape, ['Square', 'Round', 'Oval', 'Ball']) %>
+        <%= t.label "Instructions:" %>
+        <%= t.text_area :instructions %>
         
         
-        <%= f.submit data:{ disable_with: false } %>
+        
+        <%= t.submit data:{ disable_with: false } %>
         <% end %>
         <% end %>
         <%= render 'shared/links' %>

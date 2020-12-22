@@ -14,6 +14,6 @@
 
 <%= link_to "Save this cake", cake_tiers_path(@tier.cake) %><br>
 <%= link_to "Edit this cake", edit_cake_path(@tier.cake) %><br>
-<%= button_to "Delete This Cake", cake_path(cake), method: :delete %>
+<%= button_to "Delete This Cake", cake_path(@tier.cake), method: :delete %>
 
 

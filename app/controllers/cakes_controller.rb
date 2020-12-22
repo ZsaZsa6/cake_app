@@ -3,9 +3,9 @@ class CakesController < ApplicationController
 
 
     def index
-    @cakes = current_customer.cakes.recent_create
-    cake_id = Cake.find_by(params[:id])
-    btier_id = Tier.find_by(params[:id])
+        cake_id = Cake.find_by(params[:id])
+        tier_id = Tier.find_by(params[:id])
+        @cakes = current_customer.cakes.recent_create
     end
 
     def new
@@ -32,8 +32,7 @@ class CakesController < ApplicationController
      end
  
      def update
-        # binding.pry
-        
+             
         cake = Cake.find_by(id: params[:id])
          if cake.update(cake_params)
          redirect_to cake_path(cake)

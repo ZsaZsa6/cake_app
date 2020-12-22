@@ -8,9 +8,10 @@
       <br>Tier Size:<%= @tier.size %> inches<br> 
       <br>Tier Shape:<%= @tier.shape%><br>
       <br>Tier Instructions:<%= @tier.instructions %><br>
+      <br><%= hidden_field_tag :cake_id %>
       
 
-<%= link_to "Save this cake", cake_tiers_path %><br>
+<%= link_to "Save this cake", cake_tiers_path(@tier.cake) %><br>
 <%= link_to "Edit this cake" %><br>
 <%= link_to "Delete this cake" %><br>
 

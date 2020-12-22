@@ -8,5 +8,5 @@ Cake Style: <%= @cake.style %>
       Instructions for tier: <%= tier.instructions %><br>
      <% end %>
      <%= link_to "Edit this cake" %>
-     <%= link_to "Delete this cake" %><br>
+     <%= link_to "Destroy", @tier, method: :delete, data: { confirm: "Are you sure?" } %><br>
      

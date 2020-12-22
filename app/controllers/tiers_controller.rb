@@ -4,8 +4,11 @@ class TiersController < ApplicationController
     
     
     def index
-        @tier = Tier.find(params[:id])
-        @tier.cake = @cake
+       binding.pry
+        @cake = Cake.find_by(id: params[:cake_id])
+        @tier = Tier.find_by(id: params[:id])
+        # @tier = Tier.find(params[:id])
+        # @tier.cake = @cake
     
     end
 
@@ -19,7 +22,7 @@ class TiersController < ApplicationController
     def create
         @tier = current_customer.tiers.build(tier_params)
         if @tier.save 
-                    
+        @cake = @tier.cake       
         redirect_to tier_path(@tier)
         else
             render 'new'
@@ -27,8 +30,7 @@ class TiersController < ApplicationController
      end
      def show
         @tier = Tier.find(params[:id])
-        binding.pry
-        
+               
      end
    
      def edit

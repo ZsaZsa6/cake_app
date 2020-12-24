@@ -38,14 +38,17 @@ class CakesController < ApplicationController
      end
  
      def update
-             
-        @cake = Cake.find_by(id: params[:id])
-        @cake.tiers.update(tiers_attributes)
-        # working until here!! but tier doesn't update
+            
+        @cake = Cake.find(params[:id])
+        @tier = Tier.find(params[:id])
+        # @cake.tiers.update(tiers_attributes)
+       
         binding.pry
                
          if @cake.update(cake_params) 
             #this updates
+            # binding.pry
+
          redirect_to cake_path(@cake)
          else
          render edit_cake_path(@cake)

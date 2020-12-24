@@ -1,0 +1,20 @@
+<%= form_with(model: @tier) do | f | %>
+           
+        <%= f.label "Tier Flavor" %>
+        <%= f.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
+        <%= f.label "Frosting" %> 
+        <%= f.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
+        <%= f.label "Filling" %>
+        <%= f.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
+        <%= f.label "Tier size in inches"%>
+        <%= f.number_field :size, in: 4...21, step: 2 %><br>
+        <%= f.label "Shape of tier" %>
+        <%= f.select(:shape, ['Square', 'Round', 'Oval', 'Ball']) %>
+        <%= f.label "Instructions" %>
+        <%= f.text_area :instructions %>
+        <%= f.hidden_field :cake_id %>       
+        
+        <%= f.submit data:{ disable_with: false } %>
+        <% end %>
+        <%= render 'shared/links' %>
+        <%= render 'shared/web_links' %>

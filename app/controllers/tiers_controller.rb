@@ -7,9 +7,7 @@ class TiersController < ApplicationController
        
         @cake = Cake.find_by(id: params[:cake_id])
         @tier = Tier.find_by(id: params[:id])
-        # @tier = Tier.find(params[:id])
-        # @tier.cake = @cake
-    
+           
     end
 
     def new 
@@ -17,7 +15,7 @@ class TiersController < ApplicationController
         @cake = Cake.find(params[:cake_id]) 
         @tier = Tier.new
         @tier.cake = @cake
-        #  binding.pry
+        
     end
 
     def create
@@ -35,12 +33,19 @@ class TiersController < ApplicationController
      end
    
      def edit
-         @tier = Tier.find_by(params[:id])
+         @tier = Tier.find_by(id: params[:id])
+        
+
      end
     def update
-         tier = Tier.find(params[:id])
-         tier.update(tier_params)
-         render tiers_path(tier)
+         @tier = Tier.find(params[:id])
+      
+         if @tier.update(tier_params)
+         redirect_to tier_path(@tier)
+         else
+            # put a flash message here
+            render edit_tier_path(@tier)
+         end
      end
     def destroy
         @tier.destroy

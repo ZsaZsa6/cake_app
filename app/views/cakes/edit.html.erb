@@ -1,32 +1,3 @@
-
-
- <%= form_with(model: @cake, method: "patch") do |cake | %>
-    <%= cake.label "Style of Cake:" %><br>
-   
-   <br><%= cake.collection_select(:style, Cake.all, :style, :style) %><br>
-
-   
- <%= fields_for @tier do | t | %>
-           
-        <%= t.label "Tier Flavor:" %>
-        <%= t.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
-        <%= t.label "Frosting:" %> 
-        <%= t.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
-        <%= t.label "Filling:" %>
-        <%= t.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
-        <%= t.label "Tier size in inches:"%>
-        <%= t.number_field :size, in: 4...21, step: 2 %><br>
-        <%= t.label "Shape of tier:" %>
-        <%= t.select(:shape, ['Square', 'Round', 'Oval', 'Ball']) %>
-        <%= t.label "Instructions:" %>
-        <%= t.text_area :instructions %>
-        
-        
-        
-        <%= t.submit %>
-        <% end %>
-        <% end %>
-        <%= render 'shared/links' %>
-        <%= render 'shared/web_links' %>
+<%= render 'cakeform' %>
 
         

@@ -14,7 +14,7 @@ class CustomersController < ApplicationController
           session[:customer_id] = @customer.id
           redirect_to customer_path(@customer)
         else 
-          if Customer.find_by(customername: params[:customer][:customername]) || Customer.find(email: params[:customer][:email])
+          if Customer.find_by(username: params[:customer][:username]) || Customer.find(email: params[:customer][:email])
             flash[:alert] = "Looks like you've already signed up!"
             redirect_to login_path
           else 
@@ -43,7 +43,7 @@ class CustomersController < ApplicationController
     
     private
     def customer_params
-        params.require(:customer).permit(:customername, :email, :password)
+        params.require(:customer).permit(:username, :email, :password)
       end  
     
     def set_customer

@@ -1,5 +1,6 @@
-Here is your cake:
+<h3>Here is your cake:</h3>
 <br>
+
 Cake Style: <%= @cake.style %><br>
 <% @cake.tiers.each do | tier | %>
     Tier Flavor: <%= tier.flavor %><br>
@@ -10,6 +11,8 @@ Cake Style: <%= @cake.style %><br>
       Instructions for tier: <%= tier.instructions %><br>
 
      <%= link_to "Edit this cake", edit_cake_path(@cake) %>
+     <%= button_to "Delete This Cake", cake_path(cake), method: :delete %>
+
      <% end %>
      <%= render 'shared/links' %>
      <%= render 'shared/web_links' %>

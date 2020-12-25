@@ -1,6 +1,6 @@
   
    
-    <%= form_with(model: @tier, url: tiers_path) do | f | %>
+    <%= form_with(model: @tier) do | f | %>
            
         <%= f.label "Tier Flavor" %>
         <%= f.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>

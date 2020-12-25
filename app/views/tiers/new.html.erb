@@ -1,3 +1,12 @@
+<% if @cake.errors.any? %>
+    <ul id="errors">
+    <% @cake.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+
 <h3>Create The Tiers for your cake<br>
 Cake Style: <%= @cake.style %><br></h3>
 <%= render 'tiers_form' %>

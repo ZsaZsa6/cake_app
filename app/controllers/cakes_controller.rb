@@ -10,7 +10,6 @@ class CakesController < ApplicationController
 
     def new
         @cake = Cake.new
-
     end
 
     def create
@@ -19,7 +18,8 @@ class CakesController < ApplicationController
                
          redirect_to new_cake_tier_path(@cake)
         else 
-         render 'new'
+            flash[:alert] = "Your cake was not saved"
+         render :new
         end
       end
      def show
@@ -40,6 +40,7 @@ class CakesController < ApplicationController
          if @cake.update(cake_params) 
           redirect_to edit_tier_path(@cake)
          else
+            flash[:alert] = "Your cake was not updated"
          render edit_cake_path(@cake)
          end
      end

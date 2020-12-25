@@ -1,4 +1,10 @@
-
+<% if @customer.errors.any? %>
+    <ul>
+    <% @customer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
 
 
 <h2><%= "#{current_customer.username}, would you like to create a cake or view all cakes?" %></h2>

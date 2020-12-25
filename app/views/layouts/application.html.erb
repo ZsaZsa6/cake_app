@@ -12,5 +12,11 @@
   <h3>Eat More Cake </h3><center>
   
      <%= yield %>
+  <body>
+  <% flash.each do |type, msg| %>
+      <div id="flash">
+        <%= msg %>
+      </div>
+    <% end %>
   </body>
 </html>

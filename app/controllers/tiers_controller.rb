@@ -24,6 +24,7 @@ class TiersController < ApplicationController
         @cake = @tier.cake       
         redirect_to tier_path(@tier)
         else
+            flash[:alert] = "Your tiers were not created"
             render 'new'
        end
      end
@@ -43,7 +44,7 @@ class TiersController < ApplicationController
          if @tier.update(tier_params)
          redirect_to tier_path(@tier)
          else
-            # put a flash message here
+            flash[:alert] = "Your cake was not updated"
             render edit_tier_path(@tier)
          end
      end

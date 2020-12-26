@@ -9,14 +9,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <center><h1>Zsa Zsa's Cake Shop</h1><br>
-  <h3>Eat More Cake </h3><center>
+  <h2>Eat More Cake </h2><center>
+  
   
      <%= yield %>
   <body>
-  <% flash.each do |type, msg| %>
+  <h2><% flash.each do |type, msg| %>
       <div id="flash">
         <%= msg %>
-      </div>
+      </div></h2>
     <% end %>
   </body>
 </html>

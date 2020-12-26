@@ -1,6 +1,5 @@
 class TiersController < ApplicationController
-    # before_action :set_cake, only: [:index, :create]
-    before_action :set_customer
+      before_action :set_customer
     
     
     def index
@@ -17,8 +16,9 @@ class TiersController < ApplicationController
         @tier.cake = @cake
         
     end
-
+    
     def create
+       
         @tier = current_customer.tiers.build(tier_params)
         if @tier.save 
         @cake = @tier.cake       

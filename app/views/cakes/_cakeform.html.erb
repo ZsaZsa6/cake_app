@@ -1,7 +1,7 @@
 
 
 <%= form_for @cake do |f| %>
-    <%= f.label "Style of Cake:" %><br>
+    <%= f.label "Style of Cake: " %><br>
     <br><%= f.collection_select(:style, Cake.all, :style, :style) %><br>      
     <%= f.submit %> 
     <% end %>

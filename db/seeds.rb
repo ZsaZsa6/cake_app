@@ -20,5 +20,6 @@ cake3 = Cake.create(style: "Barbie Doll Cake")
 tier3 = Tier.create(flavor: "strawberry", frosting: "strawberry", filling: "strawberry", size: 8, shape: "ball", instructions: "decorate in pinks and purples", cake_id: cake3.id, customer_id: ronda.id)
 
 cake4 = Cake.create(style: "Groom's Cake")
+tier4 = Tier.create(flavor: "cookies and cream", frosting: "vanilla", filling: "maple", size: 10, shape: "square", instructions: "chocolate strawberries on top", cake_id: cake4.id, customer_id: ronda.id)
 cake5 = Cake.create(style: "Baby Shower cake")
-
+tier5 = Tier.create(flavor: "maple", frosting: "vanilla", filling: "maple", size: 8, shape: "round", instructions: "make it look like a stack of pancakes with butter and syrup on top", cake_id: cake5.id, customer_id: ronda.id)

@@ -35,14 +35,17 @@ class TiersController < ApplicationController
    
      def edit
          @tier = Tier.find_by(id: params[:id])
+        #  binding.pry
         
 
      end
     def update
          @tier = Tier.find(params[:id])
+        #  binding.pry
       
          if @tier.update(tier_params)
          redirect_to tier_path(@tier)
+
          else
             flash[:alert] = "Your cake was not updated"
             render edit_tier_path(@tier)

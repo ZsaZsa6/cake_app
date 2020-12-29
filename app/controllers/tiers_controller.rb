@@ -35,7 +35,7 @@ class TiersController < ApplicationController
    
      def edit
          @tier = Tier.find_by(id: params[:id])
-        #  binding.pry
+        
         
 
      end

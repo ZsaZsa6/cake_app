@@ -6,5 +6,7 @@ class Cake < ApplicationRecord
 
     scope :recent_create, -> { order('created_at DESC') }
     scope :recent_use, -> { order('updated_at DESC') }
+    # scope :style -> (style) { where(style: style) }
+    
 
 end

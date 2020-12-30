@@ -1,13 +1,13 @@
 class CustomersController < ApplicationController
-    before_action :set_customer, only: [:show, :edit, :update]
+  before_action :set_customer, only: [:show, :edit, :update]
 
     
 
-    def new
-        @customer = Customer.new        
-    end
+  def new
+    @customer = Customer.new        
+  end
 
-    def create
+  def create
         @customer = Customer.create(customer_params)
         if @customer.save
           params[:customer][:password]

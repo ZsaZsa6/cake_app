@@ -15,8 +15,7 @@ class ApplicationController < ActionController::Base
          
       end
     end 
-    
-          
+              
     def logged_in?
       !!current_customer
     end 
@@ -32,6 +31,4 @@ class ApplicationController < ActionController::Base
         redirect_to current_customer
       end 
     end 
-   
-
 end

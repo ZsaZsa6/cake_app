@@ -22,36 +22,32 @@ class CakesController < ApplicationController
          render :new
         end
       end
-     def show
+
+    def show
         @cake = Cake.find(params[:id])
         @tier = Tier.find(params[:id])
-    
-     end
+    end
      
-     def edit
-        @cake = Cake.find_by(id: params[:id])
-       
-    
-     end
+    def edit
+       @cake = Cake.find_by(id: params[:id])
+    end
  
-     def update
-            
+    def update            
         @cake = Cake.find(params[:id])
-                   
-         if @cake.update(cake_params) 
-          redirect_to edit_tier_path(@cake)
-         else
+          if @cake.update(cake_params) 
+            redirect_to edit_tier_path(@cake)
+            else
             flash[:alert] = "Your cake was not updated"
-         render edit_cake_path(@cake)
-         end
-     end
- 
-     def destroy
+            render edit_cake_path(@cake)
+          end
+    end
+
+    def destroy
         Cake.find(params[:id]).destroy
          redirect_to customer_cakes_path(customer_id: [current_customer.id])
-     end
+    end
 
-     private
+        private
     def set_cake
         @cake = Cake.find(params[:id])
     end

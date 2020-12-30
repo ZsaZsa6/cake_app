@@ -2,7 +2,7 @@
   <h1>Please Login</h1>
 </header>
 
-<div id="login-form">
+
 <%= form_tag login_path do %>
   <%= label_tag :username %>
   <%= text_field_tag :username %><br><br>
@@ -11,8 +11,6 @@
   <%= submit_tag "Login"%>
 <% end %>
 <br>
-  <div class="link" id="login">
+  
     <%= link_to "Sign Up ", new_customer_path %>
-   
-  </div>
-</div>
+ 

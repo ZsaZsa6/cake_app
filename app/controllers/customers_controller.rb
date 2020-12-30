@@ -35,7 +35,7 @@ class CustomersController < ApplicationController
           if @customer.save
             redirect_to customer_path(@customer)
           else 
-            flash[:notice] = "Your account was not updated"     
+            flash[:notice] = "Your account was not updated. Please check your username & password."     
             render :edit
           end 
       end

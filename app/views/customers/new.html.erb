@@ -6,7 +6,7 @@
 <% if @customer.errors.any? %>
     <ul>
     <% @customer.errors.full_messages.each do |msg| %>
-      <li id="errors"><%= msg %></li>
+      <li id="flash"><%= msg %></li>
     <% end %>
     </ul>
 <% end %>

@@ -1,11 +1,5 @@
 <header>
   <h1>Edit Customer Account</h1>
 </header>
-<% if @customer.errors.any? %>
-    <ul>
-    <% @customer.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-<% end %>
+
 <%= render 'form'%>

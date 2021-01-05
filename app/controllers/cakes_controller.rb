@@ -8,6 +8,12 @@ class CakesController < ApplicationController
         @cakes = current_customer.cakes.recent_create
     end
 
+    def search
+        cake_id = Cake.find_by(params[:id])
+        tier_id = Tier.find_by(params[:id])
+        @cakes = current_customer.cakes
+    end
+
     def new
         @cake = Cake.new
     end

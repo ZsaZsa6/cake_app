@@ -1,0 +1,19 @@
+<h2><%= "#{current_customer.username} Search for the style of cake you would like to see" %></h2>
+<% @cakes.each do | cake | %>
+ <h3> Cake Style: <%= cake.style %></h3><br>
+
+    <% cake.tiers.each do | tier | %>
+
+      Tier Flavor: <%= tier.flavor %><br>
+      Tier Filling: <%= tier.filling %><br>
+      Tier Frosting:<%= tier.frosting %><br>
+      Tier Size: <%= tier.size %> inches<br>
+      Tier Shape: <%= tier.shape %><br>
+      Instructions for tier: <%= tier.instructions %><br>
+     <% end %>
+    
+     <br><%= link_to "Edit this cake", edit_cake_path(cake) %>
+     <%= button_to "Delete This Cake", cake_path(cake), method: :delete %>
+     <% end %>
+     <%= render 'shared/links' %>
+      <%= link_to "Create a new cake", new_customer_cake_path(current_customer) %><br>

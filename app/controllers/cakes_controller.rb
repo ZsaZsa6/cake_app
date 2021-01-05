@@ -12,6 +12,7 @@ class CakesController < ApplicationController
         cake_id = Cake.find_by(params[:id])
         tier_id = Tier.find_by(params[:id])
         @cakes = current_customer.cakes
+        
     end
 
     def new
@@ -59,6 +60,6 @@ class CakesController < ApplicationController
     end
 
     def cake_params
-        params.require(:cake).permit(:style, tiers_attributes: [:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id, :customer_id])
+        params.require(:cake).permit(:style, :search, tiers_attributes: [:flavor, :filling, :frosting, :size, :shape, :instructions, :cake_id, :customer_id])
     end
 end

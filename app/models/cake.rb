@@ -8,6 +8,9 @@ class Cake < ApplicationRecord
     scope :recent_use, -> { order('updated_at DESC') }
     # scope :style -> (style) { where(style: style) }
 #    scope :flavor (:tiers) { where('tiers.flavor= ?', 'example').references(:tiers) )
+    # scope :search, -> (:tiers) {where("tiers.flavor LIKE ?", "%#{tiers.flavor}%")}
+    scope :search, -> (params) {where("lower(flavor) LIKE ?", "%#{params}%")}
+   
     
 
 end

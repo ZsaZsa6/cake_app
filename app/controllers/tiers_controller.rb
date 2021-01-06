@@ -6,6 +6,11 @@ class TiersController < ApplicationController
         @cake = Cake.find_by(id: params[:cake_id])
         @tier = Tier.find_by(id: params[:id])
     end
+    def search
+        binding.pry
+        @tiers = current_customer.tiers.search
+    end
+
 
     def new 
        @cake = Cake.find(params[:cake_id]) 

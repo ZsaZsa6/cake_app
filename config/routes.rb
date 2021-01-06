@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create", as: "session"
   delete '/sessions', to: "sessions#destroy", as: "logout"
+  get '/search', to: "tiers#search", as: "search"
   resources :customers
   resources :customers do
     resources :cakes, only: [:index, :new]

@@ -6,8 +6,11 @@ class CakesController < ApplicationController
         cake_id = Cake.find_by(params[:id])
         tier_id = Tier.find_by(params[:id])
         @cakes = current_customer.cakes.recent_create
+        if params[:q] && !params[:q].empty?
+            @cakes = @cakes.search(params[:q].downcase)
+        end
     end
-
+    
     def new
         @cake = Cake.new
     end

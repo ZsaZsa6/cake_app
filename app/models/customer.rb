@@ -14,7 +14,4 @@ class Customer < ApplicationRecord
           customer.password = SecureRandom.hex
         end
     end
-    # def self.most_cakes
-    #     joins(:cakes).group(:id).order('count(user.id)desc')
-    #   end
 end

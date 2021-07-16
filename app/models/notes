@@ -1,0 +1,3 @@
+ # scope :style -> (style) { where(style: style) }
+#    scope :flavor (:tiers) { where('tiers.flavor= ?', 'example').references(:tiers) )
+    # scope :search, -> (:tiers) {where("tiers.flavor LIKE ?", "%#{tiers.flavor}%")}

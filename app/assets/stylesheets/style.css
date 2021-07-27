@@ -10,6 +10,15 @@ body {
  h2 {
      color: white;
  }
+  h3 {
+      color: rgb(221, 247, 187);
+  }
   h4 {
-      color: whitesmoke;
+      color:aquamarine;
+  }
+  links {
+      color: blue;
+  }
+  buttons {
+      color: blue
   }

@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://res.cloudinary.com/zsazsa6/image/upload/v1626454105/Background%20pics/pexels-silvia-trigo-1857157_ixfltl.jpg');
+    background-image: url('https://res.cloudinary.com/zsazsa6/image/upload/o_50/v1626454105/Background%20pics/pexels-silvia-trigo-1857157_ixfltl.jpg');
     
     background-color: rgb(248, 244, 239); 
    
@@ -13,7 +13,7 @@ body {
      color: white;
  }
   h3 {
-      color: rgb(221, 247, 187);
+      color: rgb(95, 155, 16);
   }
   h4 {
       color:aquamarine;
@@ -27,5 +27,5 @@ body {
   cakes {
       color: rgb(8, 86, 92);
       font-weight: bold;
-      font-size: 28px;
+      font-size: 20px;
       }

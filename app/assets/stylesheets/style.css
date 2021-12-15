@@ -1,6 +1,8 @@
 body {
     background-image: url('https://res.cloudinary.com/zsazsa6/image/upload/v1626454105/Background%20pics/pexels-silvia-trigo-1857157_ixfltl.jpg');
+    
     background-color: rgb(248, 244, 239); 
+   
     background-size: 100%;
  }
  h1 {
@@ -22,3 +24,8 @@ body {
   buttons {
       color: blue
   }
+  cakes {
+      color: rgb(8, 86, 92);
+      font-weight: bold;
+      font-size: 28px;
+      }

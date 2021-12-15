@@ -13,7 +13,7 @@ class CustomersController < ApplicationController
           params[:customer][:password]
           session[:customer_id] = @customer.id
           redirect_to customer_path(@customer)
-        else 
+        else
           if Customer.find_by(username: params[:customer][:username]) || Customer.find(email: params[:customer][:email])
             flash[:alert] = "Looks like you've already signed up!"
             redirect_to login_path
@@ -21,7 +21,9 @@ class CustomersController < ApplicationController
             render :new
           end 
         end 
-      end 
+      end
+      
+
       def show 
             
       end

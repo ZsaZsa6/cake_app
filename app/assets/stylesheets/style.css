@@ -13,17 +13,17 @@ body {
      color: white;
  }
   h3 {
-      color: rgb(95, 155, 16);
+      color: rgb(91, 100, 79);
   }
   h4 {
       color:aquamarine;
   }
   links {
-      color: blue;
+      color: rgb(184, 184, 228);
   }
   buttons {
       color: rgb(144, 144, 230);
-      text: aquamarine;
+      font  : aquamarine;
   }
   submits {
       color:rgb(240, 152, 46)

@@ -2,7 +2,7 @@
 <%= form_for @cake do |f| %>
     <%= f.label "Style of Cake: " %><br>
     <br><%= f.collection_select(:style, Cake.all, :style, :style) %><br>      
-    <%= f.submit "Update Cake Style" %> 
+    <%= f.submit "Update Cake Style" %>
     <% end %>
     <%= link_to "View my cakes", customer_cakes_path(current_customer) %><br>
     <%= render 'shared/links' %>

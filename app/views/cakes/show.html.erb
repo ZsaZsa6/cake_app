@@ -3,15 +3,15 @@
 
 Cake Style: <%= @cake.style %><br>
 <% @cake.tiers.each do | tier | %>
-    Tier Flavor: <%= tier.flavor %><br>
+   <cakes> Tier Flavor: <%= tier.flavor %><br>
       Tier Filling: <%= tier.filling %><br>
       Tier Frosting:<%= tier.frosting %><br>
       Tier Size: <%= tier.size %> inches<br>
       Tier Shape: <%= tier.shape %><br>
-      Instructions for tier: <%= tier.instructions %><br>
+      Instructions for tier: <%= tier.instructions %><br></cakes>
 
      <%= link_to "Edit this cake", edit_cake_path(@cake) %>
-     <%= button_to "Delete This Cake", cake_path(cake), method: :delete %>
+     <submits><%= button_to "Delete This Cake", cake_path(cake), method: :delete %></submits>
 
      <% end %>
      <%= render 'shared/links' %>

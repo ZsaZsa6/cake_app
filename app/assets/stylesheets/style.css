@@ -22,10 +22,20 @@ body {
       color: blue;
   }
   buttons {
-      color: blue
+      color: rgb(144, 144, 230);
+      text: aquamarine;
+  }
+  submits {
+      color:rgb(240, 152, 46)
   }
   cakes {
       color: rgb(8, 86, 92);
       font-weight: bold;
       font-size: 20px;
-      }
+        }
+   tiers {
+       color:rgb(25, 124, 131);
+       font-weight: bold;
+       font-size: 20px;
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   } 
